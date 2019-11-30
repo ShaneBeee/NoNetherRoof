@@ -1,0 +1,9 @@
+# NoNetherRoof
+# By: ShaneBee
+
+settings:
+  # This is the Y coord the player must be above to take damage
+  damage-height: 126
+  # The amount of damage to deal to the player every second if they're above the height
+  # To instantly kill the player set this level to 20
+  damage-amount: 2.5

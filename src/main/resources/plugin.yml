@@ -1,0 +1,4 @@
+main: tk.shanebee.nether.NoNetherRoof
+name: NoNetherRoof
+version: '${project.version}'
+author: ShaneBee
