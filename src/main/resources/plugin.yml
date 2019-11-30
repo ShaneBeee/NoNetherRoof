@@ -2,3 +2,5 @@ main: tk.shanebee.nether.NoNetherRoof
 name: NoNetherRoof
 version: '${project.version}'
 author: ShaneBee
+description: Prevent players from travelling on the nether roof, by damaging them.
+website: https://github.com/ShaneBeee/NoNetherRoof/

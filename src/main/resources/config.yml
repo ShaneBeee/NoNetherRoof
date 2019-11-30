@@ -7,3 +7,10 @@ settings:
   # The amount of damage to deal to the player every second if they're above the height
   # To instantly kill the player set this level to 20
   damage-amount: 2.5
+  # This will clear the players drops when they die above the nether roof
+  # Enabling this just cleans up the drops the player can't get to anyways
+  clear-death-drops: false
+  # Custom message to show when a player dies on the nether roof
+  # To remove this set it to 'none' (this will enable the default death message)
+  # %player% will be replaced by the player's name
+  death-message: '%player% died whilst illegally traveling on the nether roof'
