@@ -11,10 +11,15 @@ import tk.shanebee.nether.util.Util;
 
 public class PlayerDeathListener implements Listener {
 
-    private Config config;
+    private final boolean CLEAR_DROPS;
+    private final double NETHER_HEIGHT;
+    private final String DEATH_MESSAGE;
 
     public PlayerDeathListener(NoNetherRoof plugin) {
-        this.config = plugin.getPluginConfig();
+        Config config = plugin.getPluginConfig();
+        CLEAR_DROPS = config.CLEAR_DROPS;
+        NETHER_HEIGHT = config.NETHER_HEIGHT;
+        DEATH_MESSAGE = config.DEATH_MESSAGE;
     }
 
     @EventHandler
@@ -22,11 +27,11 @@ public class PlayerDeathListener implements Listener {
         Player player = event.getEntity();
         if (player.getWorld().getEnvironment() != World.Environment.NETHER) return;
 
-        if (config.CLEAR_DROPS && player.getLocation().getY() >= config.NETHER_HEIGHT) {
+        if (CLEAR_DROPS && player.getLocation().getY() >= NETHER_HEIGHT) {
             event.getDrops().clear();
         }
-        if (!config.DEATH_MESSAGE.equals("none")) {
-            String deathMessage = config.DEATH_MESSAGE.replace("%player%", player.getName());
+        if (!DEATH_MESSAGE.equals("none")) {
+            String deathMessage = DEATH_MESSAGE.replace("%player%", player.getName());
             event.setDeathMessage(Util.getColString(deathMessage));
         }
     }

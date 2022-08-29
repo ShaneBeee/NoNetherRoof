@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 
 public class Config {
 
-    private NoNetherRoof plugin;
+    private final NoNetherRoof plugin;
     private File configFile;
     private FileConfiguration config;
 

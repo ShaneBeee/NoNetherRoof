@@ -10,6 +10,7 @@ import tk.shanebee.nether.util.Util;
 public class NoNetherRoof extends JavaPlugin {
 
     private Config config;
+    private PlayerChecker playerChecker;
 
     @Override
     public void onEnable() {
@@ -20,13 +21,14 @@ public class NoNetherRoof extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerDeathListener(this), this);
 
         // Load task
-        new PlayerChecker(this);
+        this.playerChecker = new PlayerChecker(this);
 
         Util.log("Successfully enabled");
     }
 
     @Override
     public void onDisable() {
+        this.playerChecker.cancel();
         Util.log("Successfully disabled");
     }
 
